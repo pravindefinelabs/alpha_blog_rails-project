@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @articles.each do|article| %>
+    <% @articles.each do |article| %>
       <tr>
         <td>
           <%= article.title %>
@@ -16,7 +16,12 @@
         <td>
           <%= article.description %>
         </td>
-        <td> Placeholder</td>
+        <td>
+          <%= link_to 'Show', article_path(article) %>
+        </td>
+        <td>
+          <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?", turbo_method: :delete } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
