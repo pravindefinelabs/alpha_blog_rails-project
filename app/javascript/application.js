@@ -1,5 +1,2 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-
-import "@hotwired/turbo-rails"  // No need to import Turbo again later
-import "controllers"  // Your custom controllers
-
+import "@hotwired/turbo-rails"; // Load Turbo
+import "controllers"; // Load Stimulus controllers

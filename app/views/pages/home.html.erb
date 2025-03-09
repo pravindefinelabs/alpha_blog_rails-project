@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to Homepage</h1>
+<p>
+  This is the homepage of the alpha blog application.
+</p>
+<p>
+  You can create new articles by clicking the link below:
+</p>
+<p>
+  <%= link_to 'Create New Article', new_article_path %>
+</p>
+<p>
+  You can view all articles by clicking the link below:
+</p>
+<p>
+  <%= link_to 'View All Articles', articles_path %>
+</p>
