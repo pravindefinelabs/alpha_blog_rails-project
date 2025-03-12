@@ -1,0 +1,14 @@
+ <% if @article.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Oops! We encountered some errors</strong>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li class="text-warning-emphasis">
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <%# <h2 class="text-danger-emphasis"></h2> %>
+<% end %>
