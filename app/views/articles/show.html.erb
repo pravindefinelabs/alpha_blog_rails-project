@@ -1,13 +1,23 @@
-<h1>Showing Articles Details </h1>
-<p><strong>Title: </strong>
-  <%= @article.title %>
-</p>
-<p><strong>Description: </strong>
-  <%= @article.description %>
-</p>
-<p >
-  <%= link_to 'Edit', edit_article_path(@article) %> &nbsp;
-  <%= link_to "Delete", article_path(@article), 
-    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>&nbsp;
-  <%= link_to 'Back', articles_path %>
-</p>
+<div class="row justify-content-center">
+  <div class="col-8 mt-4">
+    <div class="card shadow mb-5 bg-body-tertiary rounded">
+      <div class="card-header fst-italic text-center">
+        Created by @pravin
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">
+          <%= link_to @article.title, article_path(@article), class: "text-success text-decoration-none" %>
+        </h5>
+        <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+        <div class="text-center">
+          <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info btn-sm" %>
+          <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm mx-2" %>
+          <%= link_to 'Back', articles_path, class: "btn btn-outline-primary rounded" %>
+        </div>
+      </div>
+      <div class="card-footer text-body-secondary text-center">
+        <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+      </div>
+    </div>
+  </div>
+</div>
