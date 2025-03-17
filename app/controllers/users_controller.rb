@@ -24,6 +24,10 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
+  def show
+    @user = User.find(params[:id])
+    @articles = @user.articles
+  end
 
   private
 
