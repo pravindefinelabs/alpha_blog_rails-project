@@ -2,7 +2,8 @@
   <div class="col-8 mt-4">
     <div class="card shadow mb-5 bg-body-tertiary rounded">
       <div class="card-header fst-italic text-center">
-        Created by @<%= @article.user.username %>
+        Created by @<%= @article.user.username if @article.user %>
+        <%= link_to gravatar_for(@article.user),user_path(@article.user)%>
       </div>
       <div class="card-body">
         <h5 class="card-title text-center">
