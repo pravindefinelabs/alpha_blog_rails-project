@@ -23,8 +23,17 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 95vh;
-    // color: white !important;
+    height: 75vh;
+
+}
+
+@media (max-width: 768px) {
+    .home-img {
+        background-size: contain;
+        /* Adjusts image scaling for smaller screens */
+        min-height: 50vh;
+        /* Reduce height for mobile */
+    }
 }
 
 body {
