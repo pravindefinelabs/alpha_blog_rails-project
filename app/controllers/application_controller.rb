@@ -1,10 +1,4 @@
 class ApplicationController < ActionController::Base
-#   before_action :debug_session
-
-# def debug_session
-#   Rails.logger.debug "Session User ID: #{session[:user_id]}"
-# end
-
 
   helper_method :current_user, :logged_in?
   def current_user 
