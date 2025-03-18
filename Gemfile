@@ -69,3 +69,5 @@ end
 gem "htmlbeautifier"
 gem "cssbundling-rails"
 gem "will_paginate"
+
+
