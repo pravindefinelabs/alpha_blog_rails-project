@@ -1,0 +1,31 @@
+<h1 class="text-center mt-4 fw-semibold ">Categories</h1>
+<div class="flickr_pagination">
+  <%= will_paginate @categories, :container => false %>
+</div>
+<% @categories.each do |category| %>
+  <div class="row justify-content-center ">
+    <div class="col-4 mt-4">
+      <div class="card text-center shadow  mb-5 bg-body-tertiary rounded">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to category.name, category_path(category), class: "text-success text-decoration-none " %>
+          </h5>
+          <%# <p class="card-text"><%= truncate(article.description,length:50)  %></p>
+        <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+        <%# <%= link_to 'Show', article_path(article),class:"btn btn-outline-success" %>
+        <%# <% if logged_in? && (article.user==current_user || current_user.admin?)%>
+        <%# <%= link_to 'Edit', edit_article_path(article) ,class:"btn btn-outline-info" %>
+        <%# <%= link_to "Delete", article_path(article),data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },class:"btn btn-outline-danger" %>
+        <%# <% end %>
+      </div>
+      <div class="card-footer text-body-secondary">
+        <small>Created <%= time_ago_in_words(category.created_at)%> ago
+          , edited ago <%=time_ago_in_words(category.updated_at)%> ago </small>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @categories, :container => false %>
+</div>
